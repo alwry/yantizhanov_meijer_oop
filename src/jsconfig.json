@@ -1,0 +1,13 @@
+// src/jsconfig.json
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "./js/*": ["js/*"]
+        },
+        "module": "esnext",
+        "target": "es6"
+    },
+    "include": ["js/**/*"],
+    "exclude": ["node_modules"]
+}
