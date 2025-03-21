@@ -697,6 +697,7 @@ const customSoup = new (0, _customRecipeJs.CustomRecipe)("Bulgarian Soup", "A wa
     "Vegetables",
     "Noodles"
 ], 25);
+customRecipes.push(customSoup);
 function renderRecipes() {
     const defaultRecipeContainer = document.querySelector('.recipe');
     const customRecipeContainer = document.querySelector('.custom .recipe');
@@ -763,7 +764,6 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"htfLj":[function(require,module,exports,__globalThis) {
-// js/modules/CustomRecipe.js
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CustomRecipe", ()=>CustomRecipe);

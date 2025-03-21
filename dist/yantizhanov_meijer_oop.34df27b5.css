@@ -98,4 +98,16 @@ h1 {
   font-size: 36px;
   font-weight: 600;
 }
+
+.welcome-div {
+  color: #fff;
+  background-image: url("hero-img.eca7d938.jpg");
+  background-position: center;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: end;
+  height: 70vh;
+  padding: 50px;
+  display: flex;
+}
 /*# sourceMappingURL=yantizhanov_meijer_oop.34df27b5.css.map */

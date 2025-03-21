@@ -95,3 +95,15 @@ h1 {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
+.welcome-div {
+  height: 70vh;
+  background-image: url("../img/hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 50px;
+  color: white;
+}
