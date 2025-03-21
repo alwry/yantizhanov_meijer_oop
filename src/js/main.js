@@ -2,6 +2,8 @@
 import {Recipe} from './modules/Recipe.js';
 import {CustomRecipe} from './modules/CustomRecipe.js';
 
+gsap.registerPlugin(ScrollTrigger);
+
 
 const borscht = new Recipe(
     "Borscht",
@@ -50,6 +52,17 @@ function renderRecipes() {
       recipeElement.innerHTML = recipe.displayRecipe();
       customRecipeContainer.appendChild(recipeElement);
   });
+  gsap.from('.recipe-item', {
+    opacity: 0,
+    y: 50,
+    duration: .8,
+    stagger: .5,
+    scrollTrigger: {
+        trigger: '.recipe-item',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+    }
+});
 }
 
 renderRecipes();

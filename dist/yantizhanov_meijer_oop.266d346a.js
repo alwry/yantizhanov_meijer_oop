@@ -664,6 +664,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"2MnLa":[function(require,module,exports,__globalThis) {
 var _recipeJs = require("./modules/Recipe.js");
 var _customRecipeJs = require("./modules/CustomRecipe.js");
+gsap.registerPlugin(ScrollTrigger);
 const borscht = new (0, _recipeJs.Recipe)("Borscht", "A sour soup made with meat stock, vegetables and seasonings", [
     "Beetroot",
     "Carrot",
@@ -710,6 +711,17 @@ function renderRecipes() {
         recipeElement.classList.add('recipe-item');
         recipeElement.innerHTML = recipe.displayRecipe();
         customRecipeContainer.appendChild(recipeElement);
+    });
+    gsap.from('.recipe-item', {
+        opacity: 0,
+        y: 50,
+        duration: .8,
+        stagger: .5,
+        scrollTrigger: {
+            trigger: '.recipe-item',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        }
     });
 }
 renderRecipes();
