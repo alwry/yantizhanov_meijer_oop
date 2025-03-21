@@ -1,21 +1,25 @@
 p, h1, h2, h3 {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Manrope', Lato, sans-serif;
 }
 
 p {
     margin-bottom: 20px;
 }
 
+h1 {
+    font-weight: 800;
+}
+
 h2 {
     margin-top: 20px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
 h3 {
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 p {
@@ -25,4 +29,12 @@ p {
 
 .hidden {
     display: none;
+}
+
+a, ul, li {
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Manrope', Lato, sans-serif;
+    margin: 0;
+    padding: 0;
 }

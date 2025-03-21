@@ -662,7 +662,124 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"2MnLa":[function(require,module,exports,__globalThis) {
+var _recipeJs = require("./modules/Recipe.js");
+var _customRecipeJs = require("./modules/CustomRecipe.js");
+const borscht = new (0, _recipeJs.Recipe)("Borscht", "A sour soup made with meat stock, vegetables and seasonings", [
+    "Beetroot",
+    "Carrot",
+    "Onion",
+    "Cabbage",
+    "Potato"
+]);
+const customPizza = new (0, _customRecipeJs.CustomRecipe)("Homemade Pizza", "A classic Italian dish with your favorite toppings", [
+    "Flour",
+    "Yeast",
+    "Tomato Sauce",
+    "Cheese",
+    "Pepperoni"
+], 45);
+const customPasta = new (0, _customRecipeJs.CustomRecipe)("Pasta Alfredo", "A creamy pasta dish with a rich cheese sauce", [
+    "Pasta",
+    "Heavy Cream",
+    "Parmesan Cheese",
+    "Butter",
+    "Garlic"
+], 30);
+const defaultRecipes = [
+    borscht
+];
+const customRecipes = [
+    customPizza,
+    customPasta
+];
+const customSoup = new (0, _customRecipeJs.CustomRecipe)("Bulgarian Soup", "A warm and hearty soup", [
+    "Broth",
+    "Vegetables",
+    "Noodles"
+], 25);
+customRecipes.push(customSoup);
+function renderRecipes() {
+    const defaultRecipeContainer = document.querySelector('.recipe');
+    const customRecipeContainer = document.querySelector('.custom .recipe');
+    defaultRecipes.forEach((recipe)=>{
+        defaultRecipeContainer.innerHTML += recipe.displayRecipe();
+    });
+    customRecipes.forEach((recipe)=>{
+        customRecipeContainer.innerHTML += recipe.displayRecipe();
+    });
+}
+renderRecipes();
 
-},{}]},["bkz2e","2MnLa"], "2MnLa", "parcelRequirea989")
+},{"./modules/Recipe.js":"iacZx","./modules/CustomRecipe.js":"htfLj"}],"iacZx":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Recipe", ()=>Recipe);
+class Recipe {
+    constructor(name, description, ingredients){
+        this.name = name;
+        this.description = description;
+        this.ingredients = ingredients;
+    }
+    displayRecipe() {
+        return `
+          <h3 class="recipe-heading">${this.name}</h3>
+          <p class="description">${this.description}</p>
+          <ul>${this.ingredients.map((ing)=>`<li>${ing}</li>`).join('')}</ul>
+      `;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"htfLj":[function(require,module,exports,__globalThis) {
+// js/modules/CustomRecipe.js
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CustomRecipe", ()=>CustomRecipe);
+var _recipeJs = require("./Recipe.js");
+class CustomRecipe extends (0, _recipeJs.Recipe) {
+    constructor(name, description, ingredients, cookingTime){
+        super(name, description, ingredients);
+        this.cookingTime = cookingTime;
+    }
+    displayRecipe() {
+        return `
+            <h3 class="recipe-heading">${this.name}</h3>
+            <p class="description">${this.description}</p>
+            <ul>${this.ingredients.map((ing)=>`<li>${ing}</li>`).join('')}</ul>
+            <p class="cooking-time">Cooking Time: ${this.cookingTime} minutes</p>
+        `;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./Recipe.js":"iacZx"}]},["bkz2e","2MnLa"], "2MnLa", "parcelRequirea989")
 
 //# sourceMappingURL=yantizhanov_meijer_oop.266d346a.js.map

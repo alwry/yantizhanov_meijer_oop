@@ -1,2 +1,75 @@
+p, h1, h2, h3 {
+  font-family: Manrope, Lato, sans-serif;
+}
 
+p {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.hidden {
+  display: none;
+}
+
+a, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: Manrope, Lato, sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+.recipe {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.recipe p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cooking-time {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 600;
+}
 /*# sourceMappingURL=yantizhanov_meijer_oop.34df27b5.css.map */
