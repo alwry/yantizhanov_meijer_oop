@@ -8,8 +8,5 @@
   },
   "devDependencies": {
     "parcel": "^2.14.1"
-  },
-  "dependencies": {
-    "gsap": "^3.9.1"
   }
 }
