@@ -1,0 +1,15 @@
+{
+  "name": "yantizhanov_meijer_oop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.1"
+  },
+  "dependencies": {
+    "gsap": "^3.9.1"
+  }
+}
