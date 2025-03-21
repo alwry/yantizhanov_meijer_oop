@@ -32,20 +32,21 @@ const customSoup = new CustomRecipe(
   ["Broth", "Vegetables", "Noodles"],
   25
 );
-customRecipes.push(customSoup);
-
 function renderRecipes() {
-    const defaultRecipeContainer = document.querySelector('.recipe');
-    const customRecipeContainer = document.querySelector('.custom .recipe');
+  const defaultRecipeContainer = document.querySelector('.recipe');
+  const customRecipeContainer = document.querySelector('.custom .recipe');
 
+  const defaultRecipeElement = document.createElement('div');
+  defaultRecipeElement.classList.add('recipe-item');
+  defaultRecipeElement.innerHTML = borscht.displayRecipe();
+  defaultRecipeContainer.appendChild(defaultRecipeElement);
 
-    defaultRecipes.forEach(recipe => {
-        defaultRecipeContainer.innerHTML += recipe.displayRecipe();
-    });
-
-    customRecipes.forEach(recipe => {
-        customRecipeContainer.innerHTML += recipe.displayRecipe();
-    });
+  customRecipes.forEach(recipe => {
+      const recipeElement = document.createElement('div');
+      recipeElement.classList.add('recipe-item');
+      recipeElement.innerHTML = recipe.displayRecipe();
+      customRecipeContainer.appendChild(recipeElement);
+  });
 }
 
 renderRecipes();
