@@ -1,5 +1,4 @@
-// js/modules/CustomRecipe.js
-import { Recipe } from './Recipe.js';
+import {Recipe} from './Recipe.js';
 
 export class CustomRecipe extends Recipe {
     constructor(name, description, ingredients, cookingTime) {

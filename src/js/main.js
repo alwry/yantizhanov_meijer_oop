@@ -1,6 +1,6 @@
 
-import { Recipe } from './modules/Recipe.js';
-import { CustomRecipe } from './modules/CustomRecipe.js';
+import {Recipe} from './modules/Recipe.js';
+import {CustomRecipe} from './modules/CustomRecipe.js';
 
 
 const borscht = new Recipe(
@@ -32,6 +32,9 @@ const customSoup = new CustomRecipe(
   ["Broth", "Vegetables", "Noodles"],
   25
 );
+
+customRecipes.push(customSoup);
+
 function renderRecipes() {
   const defaultRecipeContainer = document.querySelector('.recipe');
   const customRecipeContainer = document.querySelector('.custom .recipe');
