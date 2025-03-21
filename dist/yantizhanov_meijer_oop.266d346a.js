@@ -697,15 +697,18 @@ const customSoup = new (0, _customRecipeJs.CustomRecipe)("Bulgarian Soup", "A wa
     "Vegetables",
     "Noodles"
 ], 25);
-customRecipes.push(customSoup);
 function renderRecipes() {
     const defaultRecipeContainer = document.querySelector('.recipe');
     const customRecipeContainer = document.querySelector('.custom .recipe');
-    defaultRecipes.forEach((recipe)=>{
-        defaultRecipeContainer.innerHTML += recipe.displayRecipe();
-    });
+    const defaultRecipeElement = document.createElement('div');
+    defaultRecipeElement.classList.add('recipe-item');
+    defaultRecipeElement.innerHTML = borscht.displayRecipe();
+    defaultRecipeContainer.appendChild(defaultRecipeElement);
     customRecipes.forEach((recipe)=>{
-        customRecipeContainer.innerHTML += recipe.displayRecipe();
+        const recipeElement = document.createElement('div');
+        recipeElement.classList.add('recipe-item');
+        recipeElement.innerHTML = recipe.displayRecipe();
+        customRecipeContainer.appendChild(recipeElement);
     });
 }
 renderRecipes();

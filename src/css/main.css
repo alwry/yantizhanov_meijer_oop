@@ -45,6 +45,8 @@ a, ul, li {
   padding: 10px;
   width: 100%;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe p {
@@ -52,11 +54,32 @@ a, ul, li {
   margin-bottom: 10px;
 }
 
-.cooking-time {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 20px;
+.custom .recipe {
+  display: flex;
+  flex-direction: column;
 }
 
+.recipe-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .custom .recipe {
+    flex-direction: row;
+  }
+  .recipe-item {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .recipe-item {
+    width: 33%;
+  }
+}
 header {
   border-bottom: 1px solid #ccc;
   padding: 10px;
